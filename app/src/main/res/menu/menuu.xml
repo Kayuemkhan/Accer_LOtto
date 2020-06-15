@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+
+    <item
+        android:iconTint="@color/Wheat"
+        android:id="@+id/whatsapp"
+        android:icon="@drawable/whatsapp"
+        android:title="Search"
+
+        app:showAsAction="always"
+        />
+    <item
+        android:iconTint="@color/Wheat"
+        android:id="@+id/mail"
+        android:icon="@drawable/envelopes"
+        android:title="Search"
+        app:showAsAction="always"
+
+        />
+</menu>

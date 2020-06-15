@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">ACSER LOTTO</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alert_msg">
+        <i>version 1.0.0</i> \n\n
+        <b>ACSER LOTTO</b> \n\n
+        Providing Powerful Platform
+    </string>
+    <string name="Vendor"><b>Vendor</b></string>
+    <string name="Copy"><b>Copy</b></string>
+    <string name="Cancel"><b>Cancel</b></string>
+    <string name="Pagar"><b>Pagar</b></string>
+    <string name="Combine"><b>Combine</b></string>
+    <string name="Tickets"><b>Tickets</b></string>
+    <string name="Sorteos"><b>Sorteos</b></string>
+    <string name="Cash_Match"><b>Cash Match</b></string>
+    <string name="Notification"><b>Notification</b></string>
+    <string name="Chats"><b>Chats</b></string>
+    <string name="Contact"><b>Contacts</b></string>
+    <string name="Configuration"><b>Configaration</b></string>
+    <string name="Vicular_Impreosa"><b>Vincular Immpresora</b></string>
+    <string name="Modificar_Clave"><b>Modificar Clave</b></string>
+    <string name="Admin"><b>Admin</b></string>
+    <string name="Exit"><b>Exit</b></string>
+    <string name="info"><b>Info</b></string>
+    <string name="balnce">BALANCE A LA FECHA\n$0</string>
+    <string name="hisab">Ventas \t\t\t\t 0\nCommision \t\t\t\t 0\nPremios \t\t\t\t 0\nResultado \t\t\t\t 0\nDeuda Anterior \t\t\t\t 0
+
+    </string>
+    <string name="balance">BALANCE\t 0</string>
+
+
+    <string name="PR">QN</string>
+</resources>

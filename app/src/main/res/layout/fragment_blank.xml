@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/tableHeader"
+        android:background="#3333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+
+        >
+
+        <TextView
+            android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:padding="4dp"
+                    android:text="PR"
+                    android:textStyle="bold"
+            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:text="Numero"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" />
+                <TextView
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:text="Loteria"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" />
+                <TextView
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:text="Valor"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" />
+
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableHeader"
+        tools:listitem="@layout/samplelayout"
+        android:layout_above="@id/linear11"
+        android:id="@+id/recylerview"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero"
+            android:maxLines="1"
+            android:inputType="number"
+            android:id="@+id/p1"
+
+            />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loteria"
+            android:maxLines="1"
+            android:inputType="number"
+            android:id="@+id/p2"
+            />
+        <EditText
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Valor"
+            android:inputType="numberDecimal"
+            android:id="@+id/p3"
+            />
+        <Button
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:inputType="numberDecimal"
+            android:background="@drawable/button_backgrond"
+            android:id="@+id/addbutton"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

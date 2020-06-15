@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.morangesoft.lotteryapp">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".Check2" />
+
+        <activity android:name=".QRActivity2" />
+        <activity android:name=".SelectClass" />
+
+        <activity android:name=".SorteosInput"></activity>
+
+
+
+        <activity
+            android:name=".ModificarClave"
+            android:parentActivityName=".MainActivity"
+            ></activity>
+        <activity android:name=".CancelActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CopyitemActivity"
+            android:parentActivityName=".MainActivity"
+            >
+
+        </activity>
+        <activity android:name=".AdminNActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".VincularImpresora" />
+        <activity
+            android:name=".ContactsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CashMatchActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SorteosActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TicketActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".QRActivity" />
+        <activity
+            android:name=".MessengerActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

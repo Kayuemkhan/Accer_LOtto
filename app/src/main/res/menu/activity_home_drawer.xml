@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+            <group android:checkableBehavior="single"
+
+                >
+                <item
+                    android:id="@+id/vendor"
+                    android:title="@string/Vendor"
+                    android:icon="@drawable/vender"
+                    />
+                <item
+                    android:id="@+id/copy"
+                    android:title="@string/Copy"
+                    android:icon="@drawable/copy"
+                    />
+                <item
+                    android:id="@+id/cancel"
+                    android:title="@string/Cancel"
+                    android:icon="@drawable/cancel"
+                    />
+
+
+            </group>
+    <item
+        android:title=""
+        >
+        <menu>
+            <item
+                android:id="@+id/tickets"
+                android:icon="@drawable/tikcets"
+                android:title="@string/Tickets"
+                />
+            <item
+                android:id="@+id/sorteos"
+                android:icon="@drawable/sorteos"
+                android:title="@string/Sorteos"
+                />
+            <item
+            android:id="@+id/cash_match"
+            android:icon="@drawable/cash_match"
+            android:title="@string/Cash_Match"
+            />
+            <item
+            android:id="@+id/notificationes"
+            android:icon="@drawable/notification"
+            android:title="@string/Notification"
+            />
+
+            <item
+                android:id="@+id/Contacts"
+                android:icon="@drawable/ic_baseline_contacts_24"
+                android:title="@string/Contact"
+                />
+        </menu>
+
+    </item>
+    <item
+        android:title=""
+        >
+        <menu>
+
+
+            <item
+                android:id="@+id/modificar_clave"
+                android:icon="@drawable/modificar_clave"
+                android:title="@string/Modificar_Clave"
+                />
+        </menu>
+
+    </item>
+    <item
+        android:title=""
+        >
+        <menu>
+
+            <item
+                android:id="@+id/admin"
+                android:icon="@drawable/ic_baseline_person_pin_24"
+                android:title="@string/Admin"
+                />
+        </menu>
+    </item>
+
+    <item
+        android:title=""
+        >
+        <menu>
+            <item
+                android:id="@+id/exit"
+                android:title="@string/Exit"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"
+                />
+            <item
+                android:id="@id/info"
+                android:title="@string/info"
+                android:icon="@drawable/ic_baseline_info_24"
+                />
+        </menu>
+    </item>
+
+</menu>
