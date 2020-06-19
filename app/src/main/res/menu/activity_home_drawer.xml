@@ -3,27 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-            <group android:checkableBehavior="single"
-
-                >
-                <item
-                    android:id="@+id/vendor"
-                    android:title="@string/Vendor"
-                    android:icon="@drawable/vender"
-                    />
-                <item
-                    android:id="@+id/copy"
-                    android:title="@string/Copy"
-                    android:icon="@drawable/copy"
-                    />
-                <item
-                    android:id="@+id/cancel"
-                    android:title="@string/Cancel"
-                    android:icon="@drawable/cancel"
-                    />
+                    <item
+                        android:id="@+id/vendor"
+                        android:title="@string/Vendor"
+                        android:icon="@drawable/ic_baseline_attach_money_24"
+                        android:iconTint="@color/White"
+                        />
+                    <item
+                        android:id="@+id/copy"
+                        android:title="@string/Copy"
+                        android:icon="@drawable/copy"
+                        />
+                    <item
+                        android:id="@+id/cancel"
+                        android:title="@string/Cancel"
+                        android:icon="@drawable/cancel"
+                        />
 
 
-            </group>
+
+
     <item
         android:title=""
         >

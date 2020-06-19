@@ -82,7 +82,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:inputType="textPassword"
                     android:maxLength="50"
                     android:maxLines="1"
@@ -131,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New user? "
+                    android:text="Nueva usuaria? "
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/blue_grey_300" />
 
@@ -140,9 +139,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:text="Sign Up"
+                    android:text="R e g í s t r a t e"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/green_300"
                     android:textStyle="bold"
                     />
 

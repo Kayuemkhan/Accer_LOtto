@@ -11,27 +11,36 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/copyToolbar"
-        android:background="@color/colorPrimary"
+        android:background="@color/green_200"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:elevation="4dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 
         />
-
-        <EditText
-            android:inputType="number"
-            android:maxLines="1"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_margin="20dp"
-            android:hint="Enter an number"
-            android:id="@+id/copyET"
-            />
+            android:id="@+id/gfa"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="number"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="Enter an Tikcet number"
+                android:id="@+id/copyET"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/copyET"
+            android:layout_below="@+id/gfa"
             android:layout_alignParentEnd="true"
             android:layout_margin="20dp"
             android:background="@drawable/button_backgrond"

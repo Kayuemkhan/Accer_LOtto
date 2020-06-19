@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Paper.book().destroy();
             AlertDialog.Builder aleartDialog = new AlertDialog.Builder(this);
             aleartDialog.setTitle("Exit");
-            aleartDialog.setMessage("Do you want to exit?");
+            aleartDialog.setMessage("Desea cerrar la app?");
             aleartDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

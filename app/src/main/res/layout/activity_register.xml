@@ -38,76 +38,71 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name"
-                android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@color/blue_grey_100"
-                android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:id="@+id/register_username_input"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-4dp"
-                android:layout_marginRight="-4dp"
-                android:inputType="textEmailAddress"
-                android:maxLength="50"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/blue_grey_300"
-                 />
+                android:hint="usuario"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_username_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/blue_grey_300" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="15dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone number"
-                android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@color/blue_grey_100"
-                android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:id="@+id/register_phone_number_input"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-4dp"
-                android:layout_marginRight="-4dp"
-                android:inputType="number"
-                android:maxLength="50"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/blue_grey_300"
-                 />
+                android:hint="Cellular"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/register_phone_number_input"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/blue_grey_300"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="@color/blue_grey_100"
-                android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-4dp"
-                android:layout_marginRight="-4dp"
-                android:inputType="textPassword"
-                android:maxLength="50"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/blue_grey_300"
-                android:id="@+id/register_password_input"/>
+                android:hint="Contraseña"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/blue_grey_300"
+                    android:id="@+id/register_password_input"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/register_btn"
@@ -159,7 +154,7 @@
                     android:clickable="true"
                     android:text="S I G N I N "
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/green_300"
                     android:textStyle="bold"
                     />
 

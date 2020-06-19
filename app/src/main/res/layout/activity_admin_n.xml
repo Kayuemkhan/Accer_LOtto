@@ -6,38 +6,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#3333"
+
     tools:context=".AdminNActivity">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/toolbaradmin"
-        android:background="@color/colorPrimary"
+        android:background="@color/green_200"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:elevation="4dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
-
-    <EditText
-        android:padding="15dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/editText"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFF"
-        android:inputType="numberDecimal"
-        android:hint="Enter a number"
-        />
+        android:hint="Ingrese un numero"
+        android:layout_centerInParent="true"
+        android:id="@+id/editttt"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:inputType="numberDecimal"
+            android:padding="15dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/editttt"
+        android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
-        android:background="@android:color/transparent"
-        android:text="Add Number"
+        android:background="@drawable/button_backgrond"
+        android:text="Añade un número"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:id="@+id/addButton"

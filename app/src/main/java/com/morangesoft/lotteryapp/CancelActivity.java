@@ -37,6 +37,7 @@ public class CancelActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.cancelToolbar);
         toolbar.setTitle("Cancel Tikcets");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Lottery List");
         databaseReference2.keepSynced(true);

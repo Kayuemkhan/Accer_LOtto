@@ -15,7 +15,11 @@
         <activity android:name=".Check2" />
 
         <activity android:name=".QRActivity2" />
-        <activity android:name=".SelectClass" />
+        <activity android:name=".SelectClass"
+            android:parentActivityName=".MainActivity"
+            >
+
+        </activity>
 
         <activity android:name=".SorteosInput"></activity>
 
@@ -43,7 +47,6 @@
 
         </activity>
         <activity android:name=".AdminNActivity" />
-        <activity android:name=".InfoActivity" />
         <activity android:name=".VincularImpresora" />
         <activity
             android:name=".ContactsActivity"
@@ -58,9 +61,6 @@
             android:name=".TicketActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".QRActivity" />
-        <activity
-            android:name=".MessengerActivity"
-            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
-            android:background="@color/colorPrimary"
+            android:background="@color/green_200"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:elevation="4dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -47,7 +47,7 @@
         app:headerLayout="@layout/nav_header_home"
         app:menu="@menu/activity_home_drawer"
         android:layout_gravity="start"
-        android:background="#FFF"
+        android:background="@color/green_200"
         />
 
 
