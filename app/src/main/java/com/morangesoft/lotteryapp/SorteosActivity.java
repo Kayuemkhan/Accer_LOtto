@@ -1,8 +1,14 @@
 package com.morangesoft.lotteryapp;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -71,6 +77,42 @@ public class SorteosActivity extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sorteos_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.vincular_impresora_sorteos){
+            final AlertDialog.Builder aleart = new AlertDialog.Builder(SorteosActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.error_layout,null);
+            final Button button = mView.findViewById(R.id.btn_error);
+            aleart.setView(mView);
+
+
+
+            final AlertDialog alertDialog = aleart.create();
+            alertDialog.setCanceledOnTouchOutside(false);
+            alertDialog.show();
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+        if(item.getItemId() == R.id.whatsapp_sorteos){
+            String number = "+51990148228" ;
+            String url = "https://api.whatsapp.com/send?phone="+number;
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void loadSorteosData() {

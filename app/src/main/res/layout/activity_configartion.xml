@@ -24,6 +24,7 @@
         android:layout_below="@+id/toolbarConfigaration"
         android:id="@+id/jugadastext"
         />
+
     <LinearLayout
         android:layout_below="@+id/jugadastext"
         android:layout_width="match_parent"
@@ -33,19 +34,55 @@
         android:padding="15dp"
         >
         <TextView
+            android:textSize="18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pale_super_pale"
             android:textColor="@color/Black"
             />
         <TextView
+            android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/Black"
+            android:text="@string/Seleccionar"
+            android:textColor="@color/overlay_dark_50"
             />
 
-
     </LinearLayout>
+    <View
+        android:layout_below="@+id/pale_id"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue_300"
+        />
+    <LinearLayout
+        android:layout_below="@+id/pale_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seleccion_id"
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/seleccion_de_loterias"
+            android:textColor="@color/Black"
+            />
+        <TextView
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/elgir_el_modo_de_esocger_las_loterias"
+            android:textColor="@color/overlay_dark_50"
+            />
+    </LinearLayout>
+    <View
+        android:layout_below="@+id/seleccion_id"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue_300"
+        />
 
 </RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/vincular_impresora"
+        android:id="@+id/vincular_impresora_sorteos"
+        android:title="Vincular Impresora"
+        app:showAsAction="always"
+        />
+    <item
+        android:icon="@drawable/whatsapp"
+        android:id="@+id/whatsapp_sorteos"
+        android:title="Whatsapp"
+        app:showAsAction="always"
+        />
+
+</menu>

@@ -32,8 +32,17 @@
 
     </string>
     <string name="balance">BALANCE\t 0</string>
-
+    <string name="Seleccionar"> Seleccionar opclon por defecto al momento de\n decidir si una jugada es pale o super pale</string>
 
     <string name="PR">QN</string>
     <string name="pale_super_pale">Pale / Super Pale</string>
+    <string name="seleccion_de_loterias">Seleccion de Loterias</string>
+    <string name="elgir_el_modo_de_esocger_las_loterias">Elgir el modo de esocger las loterias</string>
+    <string name="preguntar_siempre">Preguntar siempre</string>
+    <string name="usar_super_pale">Usar SUPER PALE</string>
+    <string name="usar_pale">Usar PALE</string>
+    <string name="usar_ultima_seleccion">Usar ultima seleccion</string>
+    <string name="cancel">Cancel</string>
+    <string name="usar_codigos">Usar Codigos</string>
+    <string name="seleccion_loterias">Seleccion Loterias</string>
 </resources>

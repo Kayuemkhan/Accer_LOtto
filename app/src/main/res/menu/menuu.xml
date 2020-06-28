@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
-
+    <item
+        android:icon="@drawable/vincular_impresora"
+        app:showAsAction="always"
+        android:title="print"
+        />
 
     <item
         android:iconTint="@color/Wheat"

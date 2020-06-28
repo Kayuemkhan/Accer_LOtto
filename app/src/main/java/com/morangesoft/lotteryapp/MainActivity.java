@@ -256,7 +256,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
             emailIntent.setData(Uri.parse("mailto:mq@morangesoft.com"));
             startActivity(Intent.createChooser(emailIntent, "Send feedback"));
-
         }
 
 
@@ -408,7 +407,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.configuration){
             startActivity(new Intent(MainActivity.this,Configartion.class));
         }
+        if(id == R.id.vincular_impresora){
+            final AlertDialog.Builder aleart = new AlertDialog.Builder(MainActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.error_layout,null);
+            final Button button = mView.findViewById(R.id.btn_error);
+            aleart.setView(mView);
 
+
+
+            final AlertDialog alertDialog = aleart.create();
+            alertDialog.setCanceledOnTouchOutside(false);
+            alertDialog.show();
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        alertDialog.dismiss();
+                }
+            });
+
+
+
+        }
         if (id ==R.id.Contacts){
 
             startActivity(new Intent(this,ContactsActivity.class));

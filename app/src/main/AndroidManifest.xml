@@ -13,7 +13,11 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Configartion"></activity>
+        <activity android:name=".Configartion"
+            android:parentActivityName=".MainActivity"
+            >
+
+        </activity>
         <activity
             android:name=".CashMatchPercentage"
             android:parentActivityName=".MainActivity"></activity>
