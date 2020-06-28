@@ -405,6 +405,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if (id ==R.id.notificationes){
         }
+        if(id == R.id.configuration){
+            startActivity(new Intent(MainActivity.this,Configartion.class));
+        }
 
         if (id ==R.id.Contacts){
 

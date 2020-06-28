@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.morangesoft.lotteryapp">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -11,28 +13,22 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Configartion"></activity>
+        <activity
+            android:name=".CashMatchPercentage"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".Check2" />
-
         <activity android:name=".QRActivity2" />
-        <activity android:name=".SelectClass"
-            android:parentActivityName=".MainActivity"
-            >
-
-        </activity>
-
-        <activity android:name=".SorteosInput"></activity>
-
-
-
+        <activity
+            android:name=".SelectClass"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".SorteosInput" />
         <activity
             android:name=".ModificarClave"
-            android:parentActivityName=".MainActivity"
-            ></activity>
-        <activity android:name=".CancelActivity"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CancelActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -41,11 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CopyitemActivity"
-            android:parentActivityName=".MainActivity"
-            >
-
-        </activity>
+        <activity
+            android:name=".CopyitemActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".AdminNActivity" />
         <activity android:name=".VincularImpresora" />
         <activity

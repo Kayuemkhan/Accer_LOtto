@@ -60,6 +60,16 @@
         android:title=""
         >
         <menu>
+    `       <item
+            android:id="@+id/configuration"
+            android:icon="@drawable/configuration"
+            android:title="@string/Configuration"
+            />
+            <item
+                android:id="@+id/vincular_impresora"
+                android:icon="@drawable/vincular_impresora"
+                android:title="@string/Vicular_Impreosa"
+                />
 
 
             <item

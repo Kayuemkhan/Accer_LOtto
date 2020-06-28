@@ -54,6 +54,19 @@
         android:layout_marginTop="30dp"
         android:id="@+id/sorteos_nym"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_backgrond3"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Cash Match percentage"
+        android:textColor="@color/White"
+        android:layout_below="@+id/sorteos_nym"
+        android:layout_marginTop="30dp"
+        android:id="@+id/cash_mat"
+        />
 
 
 </RelativeLayout>

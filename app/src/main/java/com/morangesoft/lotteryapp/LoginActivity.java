@@ -116,13 +116,15 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }
-                    } else {
+                    } else if (!dataSnapshot.child(parentDbName).child(phone).exists())
+                        {
                         loadingBar1.dismiss();
                         Toast.makeText(LoginActivity.this, "password is not Correct", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "Account With this" + phone + " number do not exists", Toast.LENGTH_SHORT).show();
                     loadingBar1.dismiss();
+                    Toast.makeText(LoginActivity.this, "Account With this" + phone + " number do not exists", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
