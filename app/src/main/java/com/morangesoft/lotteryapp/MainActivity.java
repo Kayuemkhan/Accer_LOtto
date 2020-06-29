@@ -4,8 +4,13 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -14,10 +19,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -57,11 +64,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Set;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private ListView listView;
+    private ArrayList<String> mDeviceList = new ArrayList<String>();
+    private BluetoothAdapter mBluetoothAdapter;
     private static final int CONTENT_VIEW_ID = 10101010;
     public static int i = 1;
     DrawerLayout drawerLayout;
@@ -69,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button addbutton;
     private EditText et1, et2, et3;
     private DatabaseReference databaseReference;
-    private ListView listView;
     private RecyclerView recyclerView;
     ArrayList<DatasetFireabase> arrayList;
     private RecyclerView.Adapter<FirebaseViewHolder.ViewHolder> adapter;
@@ -89,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
@@ -267,23 +278,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        if(id ==R.id.copy){
+        if (id == R.id.copy) {
 //            startActivity(new Intent(this,CopyitemActivity.class));
 //            finish();
-            final CharSequence[] items =  {"Numero de ticket", "Codigo QR"};
-            final AlertDialog.Builder aleart= new AlertDialog.Builder(MainActivity.this)
+            final CharSequence[] items = {"Numero de ticket", "Codigo QR"};
+            final AlertDialog.Builder aleart = new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Copiar Ticket")
-                    .setItems(items, new DialogInterface.OnClickListener()
-                    {
+                    .setItems(items, new DialogInterface.OnClickListener() {
                         @RequiresApi(api = Build.VERSION_CODES.M)
                         @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                            switch(which)
-                            {
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which) {
                                 case 0:
                                     dialog.dismiss();
-                                    startActivity(new Intent(MainActivity.this,CopyitemActivity.class));
+                                    startActivity(new Intent(MainActivity.this, CopyitemActivity.class));
 
                                     break;
                                 case 1:
@@ -308,30 +316,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                                    });
 //                                    alertDialog1.show();
 
-                                    Intent intent = new Intent(MainActivity.this,QRActivity2.class);
+                                    Intent intent = new Intent(MainActivity.this, QRActivity2.class);
                                     startActivity(intent);
-                        }}
+                            }
+                        }
                     });
-                           aleart.create().show();
+            aleart.create().show();
 
         }
-        if (id ==R.id.cancel){
+        if (id == R.id.cancel) {
 
-            final CharSequence[] items =  {"Numero de ticket", "Codigo QR"};
+            final CharSequence[] items = {"Numero de ticket", "Codigo QR"};
 
-            AlertDialog.Builder aleart= new AlertDialog.Builder(this)
+            AlertDialog.Builder aleart = new AlertDialog.Builder(this)
                     .setTitle("Copiar Ticket")
-                    .setItems(items, new DialogInterface.OnClickListener()
-                    {
+                    .setItems(items, new DialogInterface.OnClickListener() {
                         @RequiresApi(api = Build.VERSION_CODES.M)
                         @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                            switch(which)
-                            {
+                        public void onClick(DialogInterface dialog, int which) {
+                            switch (which) {
                                 case 0:
                                     dialog.dismiss();
-                                    startActivity(new Intent(MainActivity.this,CancelActivity.class));
+                                    startActivity(new Intent(MainActivity.this, CancelActivity.class));
 //                                    final AlertDialog alertDialog;
 //                                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 //                                    alertDialog = builder.create();
@@ -353,8 +359,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                                    alertDialog.show();
 
                                     break;
-                                  case 1:
-                                      dialog.dismiss();
+                                case 1:
+                                    dialog.dismiss();
 //                                      final AlertDialog alertDialog1;
 //                                      AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
 //                                      alertDialog1 = builder1.create();
@@ -374,8 +380,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                                          }
 //                                      });
 //                                      alertDialog1.show();
-                                 Intent intent = new Intent(MainActivity.this,QRActivity.class);
-                              startActivity(intent);
+                                    Intent intent = new Intent(MainActivity.this, QRActivity.class);
+                                    startActivity(intent);
 
 
                             }
@@ -386,33 +392,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
 
-        if (id ==R.id.tickets){
+        if (id == R.id.tickets) {
 
-           startActivity(new Intent(this,TicketActivity.class));
+            startActivity(new Intent(this, TicketActivity.class));
 
-
-        }
-        if (id ==R.id.sorteos){
-
-            startActivity(new Intent(this,SorteosActivity.class));
 
         }
-        if (id ==R.id.cash_match){
+        if (id == R.id.sorteos) {
 
-            startActivity(new Intent(this,CashMatchActivity.class));
+            startActivity(new Intent(this, SorteosActivity.class));
 
         }
-        if (id ==R.id.notificationes){
+        if (id == R.id.cash_match) {
+
+            startActivity(new Intent(this, CashMatchActivity.class));
+
         }
-        if(id == R.id.configuration){
-            startActivity(new Intent(MainActivity.this,Configartion.class));
+        if (id == R.id.notificationes) {
         }
-        if(id == R.id.vincular_impresora){
+        if (id == R.id.configuration) {
+            startActivity(new Intent(MainActivity.this, Configartion.class));
+        }
+        if (id == R.id.vincular_impresora) {
+
+            final BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
+            //if (!bAdapter.isEnabled()) {
             final AlertDialog.Builder aleart = new AlertDialog.Builder(MainActivity.this);
-            View mView = getLayoutInflater().inflate(R.layout.error_layout,null);
+            View mView = getLayoutInflater().inflate(R.layout.error_layout, null);
             final Button button = mView.findViewById(R.id.btn_error);
             aleart.setView(mView);
-
 
 
             final AlertDialog alertDialog = aleart.create();
@@ -421,62 +429,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        alertDialog.dismiss();
+                    alertDialog.dismiss();
                 }
             });
-
-
-
         }
-        if (id ==R.id.Contacts){
 
-            startActivity(new Intent(this,ContactsActivity.class));
+            if (id == R.id.Contacts) {
 
-        }
-        if (id== R.id.modificar_clave){
-            startActivity(new Intent(MainActivity.this,ModificarClave.class));
-        }
-        if (id == R.id.exit){
-            Paper.book().destroy();
-            AlertDialog.Builder aleartDialog = new AlertDialog.Builder(this);
-            aleartDialog.setTitle("Exit");
-            aleartDialog.setMessage("Desea cerrar la app?");
-            aleartDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            });
-            aleartDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(this, ContactsActivity.class));
 
-                }
-            });
-            aleartDialog.create();
-            aleartDialog.show();
-        }
-        if (id == R.id.info){
-            AlertDialog.Builder aleart = new AlertDialog.Builder(this);
-            aleart.setTitle("About");
-            aleart.setMessage(R.string.alert_msg);
-            aleart.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            }
+            if (id == R.id.modificar_clave) {
+                startActivity(new Intent(MainActivity.this, ModificarClave.class));
+            }
+            if (id == R.id.exit) {
+                Paper.book().destroy();
+                AlertDialog.Builder aleartDialog = new AlertDialog.Builder(this);
+                aleartDialog.setTitle("Exit");
+                aleartDialog.setMessage("Desea cerrar la app?");
+                aleartDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                aleartDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                }
-            });
+                    }
+                });
+                aleartDialog.create();
+                aleartDialog.show();
+            }
+            if (id == R.id.info) {
+                AlertDialog.Builder aleart = new AlertDialog.Builder(this);
+                aleart.setTitle("About");
+                aleart.setMessage(R.string.alert_msg);
+                aleart.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-            aleart.create();
-            aleart.show();
-        }
-        if (id == R.id.admin){
-            startActivity(new Intent(this,SelectClass.class));
-        }
+                    }
+                });
+
+                aleart.create();
+                aleart.show();
+            }
+            if (id == R.id.admin) {
+                startActivity(new Intent(this, SelectClass.class));
+            }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void addbutton1() {
@@ -584,6 +593,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         });
   }
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(mReceiver);
+        super.onDestroy();
+    }
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            final AlertDialog.Builder aler = new AlertDialog.Builder(MainActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.listview, null);
+            final ListView listView = mView.findViewById(R.id.listView_bluetooth);
+            aler.setView(mView);
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                BluetoothDevice device = intent
+                        .getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                mDeviceList.add(device.getName() + "\n" + device.getAddress());
+                Log.i("BT", device.getName() + "\n" + device.getAddress());
+                listView.setAdapter(new ArrayAdapter<String>(context,
+                        android.R.layout.simple_list_item_1, mDeviceList));
+                final AlertDialog alertDialo = aler.create();
+                alertDialo.setCanceledOnTouchOutside(false);
+                alertDialo.show();
+            }
+        }
+    };
 
     @Override
     protected void onStop() {
