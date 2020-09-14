@@ -593,11 +593,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         });
   }
-    @Override
-    protected void onDestroy() {
-        unregisterReceiver(mReceiver);
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        unregisterReceiver(mReceiver);
+//        super.onDestroy();
+//    }
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
